@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    <property name="url" value="jdbc:mysql://localhost:3306/student" />
+    <property name="username" value="root" />
+    <property name="password" value="admin1234" />
+  </bean>
+  <bean id="studentDAO" class="springjdbc.dao.StudentDAO">
+    <property name="dataSource" ref="dataSource"></property>
+  </bean>
+  <bean id="student" class="springjdbc.model.Student">
+		<property name="id" value="1" />
+		<property name="name" value="name" />
+		<property name="birthOfDate" value="birthOfDate">
+			
+		</property>
+		<property name="gender" value="gender" />
+	</bean>
+</beans>
